@@ -11,7 +11,7 @@ import SwiftUI
 struct cartazTurmaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack { CartazView() }
         }
     }
 }

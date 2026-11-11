@@ -17,7 +17,7 @@ struct FigurinhaView: View {
     @State private var posicao = CGSize.zero
     @State private var escala: CGFloat = 1
     @State private var angulo = Angle.zero
-    
+
     var body: some View {
         Circle()
             .frame(width: 100, height: 100)
@@ -44,9 +44,9 @@ struct FigurinhaView: View {
                     }
             )
             .simultaneousGesture(
-                MagnifyGesture()
+                MagnificationGesture()
                     .onChanged { valor in
-                        let novaEscala = valor.magnification
+                        let novaEscala = valor
                         escala = min(max(novaEscala, 0.5), 2.5)
                     }
             )
@@ -57,8 +57,4 @@ struct FigurinhaView: View {
                     }
             )
     }
-}
-
-#Preview {
-    FigurinhaView()
 }
